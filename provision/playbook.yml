@@ -1,4 +1,5 @@
 ---
 - hosts: localhost
-  tasks:
-  - debug: msg="hello world"
+  become: true
+  roles:
+    - { role: gano2018.ansible_os_init, tags: os_init }
