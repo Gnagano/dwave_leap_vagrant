@@ -1,0 +1,7 @@
+---
+anyenv:
+  required_packages:
+    - gcc
+  repository_url: https://github.com/riywo/anyenv
+  install_envs:
+    - rbenv
