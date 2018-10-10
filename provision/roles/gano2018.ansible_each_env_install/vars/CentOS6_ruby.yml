@@ -1,0 +1,9 @@
+required_libraries:
+  - gcc
+  - libffi-devel # for 2.2.0
+  - openssl-devel
+  - readline-devel
+  - zlib-devel
+
+env_name: rbenv
+version: "{{ ruby_version }}"

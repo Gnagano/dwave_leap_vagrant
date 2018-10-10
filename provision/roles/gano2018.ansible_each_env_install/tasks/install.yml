@@ -1,0 +1,23 @@
+---
+- include_vars:
+    file: "{{ os_type }}_{{ env }}.yml"
+    name: env_vars
+
+- name: Set for path of language_command_path
+  stat: path="{{ anyenv_root | default('/opt/anyenv') }}/envs/{{ env_vars.env_name }}/versions/{{ env_vars.version }}/bin/{{ env }}"
+  register: language_command_path
+
+- block:
+  - name: install language
+    become_user: root
+    shell: "{{ env_vars.env_name }} install {{ env_vars.version }}"
+
+  - name: env global
+    shell: "{{ env_vars.env_name }} global {{ env_vars.version }}"
+
+  environment:
+  - PATH: "{{ anyenv_root | default('/opt/anyenv') }}/envs/{{ env_vars.env_name }}/bin/:{{ lookup('env','PATH') }}"
+  - PHPENV_ROOT: "{{ anyenv_root | default('/opt/anyenv') }}/envs/phpenv"
+  - PYENV_ROOT: "{{ anyenv_root | default('/opt/anyenv') }}/envs/pyenv"
+  - RBENV_ROOT: "{{ anyenv_root | default('/opt/anyenv') }}/envs/rbenv"
+  when: language_command_path.stat.exists == false

@@ -1,0 +1,10 @@
+required_libraries:
+  - libbz2-dev
+  - libsqlite3-dev
+  - libssl-dev
+  - libreadline6
+  - libreadline6-dev
+  - zlib1g-dev
+
+env_name: pyenv
+version: "{{ python_version }}"

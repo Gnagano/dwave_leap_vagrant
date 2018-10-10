@@ -1,0 +1,13 @@
+---
+- include_vars:
+    file: "{{ os_type }}_{{ env }}.yml"
+    name: env_vars
+
+- name: Install required libraries
+  package:
+    name: "{{ library }}"
+    state: present
+    update_cache: yes
+  with_items: "{{ env_vars.required_libraries }}"
+  loop_control:
+    loop_var: library

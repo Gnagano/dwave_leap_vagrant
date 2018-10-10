@@ -1,0 +1,22 @@
+required_libraries:
+  - bzip2-devel
+  - cmake
+  - curl-devel
+  - freetype-devel
+  - gcc
+  - gcc-c++
+  - git
+  - libicu-devel
+  - libjpeg-devel
+  - libmcrypt-devel
+  - libpng-devel
+  - libtidy-devel
+  - libxml2-devel
+  - libXpm-devel
+  - libxslt-devel
+  - openssl-devel
+  - readline-devel
+  - re2c
+
+env_name: phpenv
+version: "{{ php_version }}"

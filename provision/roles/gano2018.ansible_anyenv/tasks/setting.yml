@@ -1,0 +1,12 @@
+---
+- name: Add profile
+  template:
+    src: anyenv.sh.j2
+    dest: /etc/profile.d/anyenv.sh
+    owner: root
+    group: root
+    mode:  0755
+
+- name: Force init.
+  shell: /etc/profile.d/anyenv.sh
+  changed_when: false

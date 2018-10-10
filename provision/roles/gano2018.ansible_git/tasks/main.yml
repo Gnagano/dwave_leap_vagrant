@@ -1,0 +1,3 @@
+---
+- include: install.yml tags=git
+- include: configure.yml tags=git
