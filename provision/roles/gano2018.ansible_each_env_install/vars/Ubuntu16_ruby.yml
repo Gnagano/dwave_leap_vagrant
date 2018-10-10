@@ -1,0 +1,15 @@
+required_libraries:
+  - autoconf
+  - bison
+  - build-essential
+  - libffi-dev
+  - libgdbm3
+  - libgdbm-dev
+  - libncurses5-dev
+  - libreadline6-dev
+  - libssl-dev
+  - libyaml-dev
+  - zlib1g-dev
+
+env_name: rbenv
+version: "{{ ruby_version }}"

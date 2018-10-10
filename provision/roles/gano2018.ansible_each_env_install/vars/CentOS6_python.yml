@@ -1,0 +1,15 @@
+required_libraries:
+  - bzip2
+  - bzip2-devel
+  - gcc
+  - gcc-c++
+  - git
+  - make
+  - openssl-devel
+  - readline-devel
+  - sqlite
+  - sqlite-devel
+  - zlib-devel
+
+env_name: pyenv
+version: "{{ python_version }}"

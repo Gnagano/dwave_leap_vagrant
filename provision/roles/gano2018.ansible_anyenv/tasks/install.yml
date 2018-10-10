@@ -1,0 +1,10 @@
+---
+- name: Set for path of anyenv_path
+  stat: path="{{ anyenv_root | default('/opt/anyenv') }}/bin/anyenv"
+  register: anyenv_command_path
+
+- name: Clone the repository
+  git:
+    repo: "{{ anyenv_repository_url }}"
+    dest: "{{ anyenv_root | default('/opt/anyenv') }}"
+  when: anyenv_command_path.stat.exists == false

@@ -1,0 +1,6 @@
+---
+anyenv_required_packages:
+  - gcc
+anyenv_repository_url: https://github.com/riywo/anyenv
+anyenv_install_envs:
+  - pyenv

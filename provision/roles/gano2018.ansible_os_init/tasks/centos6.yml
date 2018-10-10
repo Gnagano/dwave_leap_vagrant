@@ -1,0 +1,4 @@
+---
+- name: Additional package auto registration
+  shell: "curl -s {{ os_init.additional_package_url }} | bash"
+  ignore_errors: yes

@@ -1,0 +1,5 @@
+---
+- include: prepare.yml tags=anyenv
+- include: install.yml tags=anyenv
+- include: setting.yml tags=anyenv
+- include: env.yml tags=anyenv
