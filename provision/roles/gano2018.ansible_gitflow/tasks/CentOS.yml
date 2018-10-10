@@ -1,5 +1,4 @@
 ---
-
 - include_vars:
     file: "{{ ansible_distribution }}.yml"
     name: gitflow
