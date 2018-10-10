@@ -1,5 +1,0 @@
----
-- include_tasks: prepare.yml tags=anyenv
-- include_tasks: install.yml tags=anyenv
-- include_tasks: setting.yml tags=anyenv
-- include_tasks: env.yml tags=anyenv

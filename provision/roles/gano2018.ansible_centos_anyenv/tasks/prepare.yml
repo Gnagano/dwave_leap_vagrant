@@ -1,7 +1,0 @@
----
-- name: Install required packages
-  package:
-    name: "{{ item }}"
-    state: present
-    update_cache: yes
-  with_items: "{{ anyenv.required_packages }}"

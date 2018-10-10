@@ -2,4 +2,6 @@
 - hosts: localhost
   become: true
   roles:
-    - { role: gano2018.ansible_os_init, tags: os_init }
+    - { role: gano2018.ansible_os_init,       tags: os_init }
+    - { role: gano2018.ansible_git,           tags: os_init }
+    - { role: gano2018.ansible_centos_anyenv,  tags: os_init }

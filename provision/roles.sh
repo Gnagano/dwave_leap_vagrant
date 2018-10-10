@@ -5,11 +5,10 @@ SCRIPT_DIR=`dirname $0`
 
 roles=(
 "gano2018.ansible_os_init"
-#"gano2018.ansible_git"     depended
-#"gano2018.ansible_gitflow"
-"gano2018.ansible_centos_anyenv"
-#"gano2018.ansible_centos_ruby"
-#"gano2018.ansible_centos_rails"
+"gano2018.ansible_git"
+"gano2018.ansible_gitflow"
+"gano2018.ansible_anyenv"
+"gano2018.ansible_each_env_install"
 )
 
 for role in ${roles[@]}
