@@ -9,6 +9,7 @@ roles=(
 "gano2018.ansible_gitflow"
 "gano2018.ansible_anyenv"
 "gano2018.ansible_each_env_install"
+"gano2018.ansible_dwave_ocean_sdk_setup"
 )
 
 for role in ${roles[@]}

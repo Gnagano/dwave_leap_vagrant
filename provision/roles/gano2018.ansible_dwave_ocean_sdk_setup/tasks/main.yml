@@ -1,0 +1,32 @@
+---
+- set_fact:
+    os_type: "{{ ansible_distribution }}{{ ansible_distribution_major_version }}"
+
+- name: install dwave-ocean-sdk
+  pip:
+    name: dwave-ocean-sdk
+
+- name: set dwave-ocean-sdk_gitpath
+  stat: path="/tmp/dwave-ocean-sdk"
+  register: dwave_ocean_sdk_git_path
+
+- name: Clone the repository
+  become: yes
+  git:
+    repo: "{{ leap_dwave_ocean_sdk_repository }}"
+    dest: /tmp/dwave-ocean-sdk
+  when: dwave_ocean_sdk_git_path.stat.exists == false
+
+- name: python setup.py
+  shell: "python setup.py install"
+  args:
+    chdir: "/tmp/dwave-ocean-sdk/"
+  environment:
+  - PATH: "{{ anyenv_root | default('/opt/anyenv') }}/bin:{{ lookup('env','PATH') }}"
+  - PHPENV_ROOT: "{{ anyenv_root | default('/opt/anyenv') }}/envs/phpenv"
+
+- name: remove the cloned direcotry
+  become: yes
+  file:
+    state: absent
+    path: "/tmp/dwave-ocean-sdk"

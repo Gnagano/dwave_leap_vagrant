@@ -2,8 +2,9 @@
 - hosts: localhost
   become: true
   roles:
-    - { role: gano2018.ansible_os_init,          tags: os_init }
-    - { role: gano2018.ansible_git,              tags: git }
-    - { role: gano2018.ansible_gitflow,          tags: git }
-    - { role: gano2018.ansible_anyenv,           tags: anyenv }
-    - { role: gano2018.ansible_each_env_install, tags: anyenv }
+    - { role: gano2018.ansible_os_init,               tags: os_init }
+    - { role: gano2018.ansible_git,                   tags: git }
+    - { role: gano2018.ansible_gitflow,               tags: git }
+    - { role: gano2018.ansible_anyenv,                tags: anyenv }
+    - { role: gano2018.ansible_each_env_install,      tags: anyenv }
+    - { role: gano2018.ansible_dwave_ocean_sdk_setup, tags: dwave }
