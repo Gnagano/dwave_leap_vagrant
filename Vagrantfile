@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
     #メモリ　512MB
     develop.vm.provider "virtualbox" do |vm|
-      vm.customize ["modifyvm", :id, "--memory", "512"]
+      vm.customize ["modifyvm", :id, "--memory", "2048"]
     end
 
     develop.vm.synced_folder "app", "/home/vagrant/dwave",
