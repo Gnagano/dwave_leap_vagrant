@@ -10,14 +10,14 @@ Vagrant.configure("2") do |config|
 
     #メモリ　512MB
     develop.vm.provider "virtualbox" do |vm|
-      vm.customize ["modifyvm", :id, "--memory", "512"]
+      vm.customize ["modifyvm", :id, "--memory", "2048"]
     end
-    #
-    # develop.vm.synced_folder "app", "/home/doc_root/",
-    #   id: "vagrant-root1", :nfs => false,
-    #   :owner => "vagrant",
-    #   :group => "www-data",
-    #   :mount_options => ["dmode=775,fmode=775"]
+
+    develop.vm.synced_folder "app", "/home/vagrant/dwave",
+      id: "vagrant-root1", :nfs => false,
+      :owner => "vagrant",
+      :group => "www-data",
+      :mount_options => ["dmode=775,fmode=775"]
 
     develop.vm.synced_folder "provision", "/home/vagrant/provision",
       id: "vagrant-provision", :nfs => false,
