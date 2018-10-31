@@ -1,0 +1,5 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - { role: gano2018.ansible_dwave_ocean_sdk_setup, tags: dwave }
