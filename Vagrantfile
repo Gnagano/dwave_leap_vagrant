@@ -29,14 +29,23 @@ Vagrant.configure("2") do |config|
       echo "#!/bin/sh\n ansible-playbook -i localhost, -c local /home/vagrant/provision/playbook.yml" > /home/vagrant/provision.sh
     SHELL
 
+    #set up python on anyenv
     develop.vm.provision "ansible_local" do |ansible|
-      #ansible on Guest OS
-      #ansible.playbook = "provision_local/playbook.yml"
-
-      #ansible on Host OS
       ansible.playbook = "provision/playbook.yml"
-      ansible.install = true #Ansibleを自動でインストールさせる
+      ansible.install  = true #Ansibleを自動でインストールさせる
     end
+
+    #reboot terminal
+    develop.vm.provision "shell", inline: <<-SHELL
+      exec /bin/bash -l
+      sudo chown -R vagrant:vagrant /opt/anyenv/envs/
+    SHELL
+
+    #set up dwave env
+    develop.vm.provision "ansible_local" do |ansible|
+      ansible.playbook = "provision/playbook_dwave.yml"
+    end
+
   end
 
 end
