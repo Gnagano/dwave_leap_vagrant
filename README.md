@@ -14,6 +14,9 @@ You can skip [Installing Ocean Tools](https://docs.ocean.dwavesys.com/en/latest/
 you need set up `Vagrant` and `Virtualbox` before using this repository.
 The Vagrantfile in this repository boot Ubuntu16.04, so you need to know about it.
 
+Default IP address on Vagrantfile is `192.168.11.10`.<br>
+Please change it if you need.
+
 # Setup
 
 ## 1. clone this repository
