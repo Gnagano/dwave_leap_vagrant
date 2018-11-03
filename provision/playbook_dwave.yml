@@ -5,14 +5,14 @@
     - { role: gano2018.ansible_dwave_ocean_sdk_setup, tags: dwave }
 
 - hosts: all
- tasks:
- - name: set dwave_sample_repo
-   stat: path="/home/vagrant/dwave_sample"
-   register: dwave_sample_path
+  tasks:
+  - name: set dwave_sample_repo
+    stat: path="/home/vagrant/dwave_sample"
+    register: dwave_sample_path
 
- - name: Clone the repository
-   git:
-     repo: "https://github.com/gano2018/dwave_leap_programming_test.git"
-     dest: /home/vagrant/dwave_sample
-     refspec: +refs/heads/develop:refs/remotes/origin/develop
-   when: dwave_sample_path.stat.exists == false
+  - name: Clone the repository
+    git:
+      repo: "https://github.com/gano2018/dwave_leap_programming_test.git"
+      dest: /home/vagrant/dwave_sample
+      refspec: +refs/heads/develop:refs/remotes/origin/develop
+    when: dwave_sample_path.stat.exists == false
