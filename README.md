@@ -16,14 +16,14 @@ The Vagrantfile in this repository boot Ubuntu16.04, so you need to know about i
 
 # Setup
 
-1. clone this repository
+## 1. clone this repository
 
 ```
 $ git clone https://github.com/gano2018/dwave_leap_vagrant.git
 $ cd dwave_leap_vagrant
 ```
 
-2. vagrant up
+## 2. vagrant up
 
 Execute `vagrant up`
 
@@ -33,7 +33,7 @@ $ vagrant up
 
 Also start provisioning, so it may takes a while.
 
-3. vagrant ssh
+## 3. vagrant ssh
 
 Execute `vagrant ssh` and access the virtual machine.
 
@@ -60,11 +60,11 @@ Learn how to use it by [D-Wave Ocean Software Documtentaion](https://docs.ocean.
 When your setup is done, [some sample codes](https://github.com/gano2018/dwave_leap_programming_test) are automatically cloned at `/home/vagrant/dwave_sample`.
 Write how to excecute them below.
 
-1. Create your account at [D-Wave Leap](https://cloud.dwavesys.com/leap/login/).
+## 1. Create your account at [D-Wave Leap](https://cloud.dwavesys.com/leap/login/).
 
-2. After login, you can get `API TOKEN` and `Solver API endpoint`. Those two are required to use sample codes.
+## 2. After login, you can get `API TOKEN` and `Solver API endpoint`. Those two are required to use sample codes.
 
-3. Configure a D-Wave System as a Solver
+## 3. Configure a D-Wave System as a Solver
 
 　When executing `dwave config create` like below,
 　interactive dialog is starging.
@@ -90,7 +90,7 @@ Write how to excecute them below.
 
 　For the detail, please read [Configuring a D-Wave System as a Solver](https://docs.ocean.dwavesys.com/en/latest/overview/dwavesys.html#dwavesys)
 
-4. Rename the file dwave_sample/config/account.py.default as dwave/sample/config/account.py.Then edit the constant `LEAP_API_TOKEN` like below.
+## 4. Rename the file dwave_sample/config/account.py.default as dwave/sample/config/account.py.Then edit the constant `LEAP_API_TOKEN` like below.
 
   ```
   LEAP_API_TOKEN='YOUR_API TOKEN'
@@ -106,7 +106,7 @@ Write how to excecute them below.
   SOLVER_NAME='YOUR_SOLVER_NAME'
   ```
 
-5. Excecute sample code
+## 5. Excecute sample code
 
 　Just execute sample python code like below.
 
