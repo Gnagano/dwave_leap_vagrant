@@ -13,11 +13,11 @@ Vagrant.configure("2") do |config|
       vm.customize ["modifyvm", :id, "--memory", "2048"]
     end
 
-    develop.vm.synced_folder "app", "/home/vagrant/dwave",
-      id: "vagrant-root1", :nfs => false,
-      :owner => "vagrant",
-      :group => "www-data",
-      :mount_options => ["dmode=775,fmode=775"]
+    # develop.vm.synced_folder "app", "/home/vagrant/dwave_sample",
+    #   id: "vagrant-root1", :nfs => false,
+    #   :owner => "vagrant",
+    #   :group => "www-data",
+    #   :mount_options => ["dmode=775,fmode=775"]
 
     develop.vm.synced_folder "provision", "/home/vagrant/provision",
       id: "vagrant-provision", :nfs => false,
