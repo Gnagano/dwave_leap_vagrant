@@ -52,7 +52,7 @@ $ which dwave
 
 # Usage
 
-You can use quantum aneealing computing now!
+You can use quantum aneealing computing now!<br>
 Learn how to use it by [D-Wave Ocean Software Documtentaion](https://docs.ocean.dwavesys.com/en/latest/index.html).
 
 # How to execute sample codes
@@ -60,9 +60,12 @@ Learn how to use it by [D-Wave Ocean Software Documtentaion](https://docs.ocean.
 When your setup is done, [some sample codes](https://github.com/gano2018/dwave_leap_programming_test) are automatically cloned at `/home/vagrant/dwave_sample`.
 Write how to excecute them below.
 
-## 1. Create your account at [D-Wave Leap](https://cloud.dwavesys.com/leap/login/).
+## 1. Create your D-Wave Leap account
+Create your accout at [D-Wave Leap](https://cloud.dwavesys.com/leap/login/).
 
-## 2. After login, you can get `API TOKEN` and `Solver API endpoint`. Those two are required to use sample codes.
+## 2. Get API TOKEN and Solver API endpoint
+
+After login, you can get `API TOKEN` and `Solver API endpoint`. Those two are required to use sample codes.
 
 ## 3. Configure a D-Wave System as a Solver
 
@@ -90,16 +93,18 @@ Write how to excecute them below.
 
 　For the detail, please read [Configuring a D-Wave System as a Solver](https://docs.ocean.dwavesys.com/en/latest/overview/dwavesys.html#dwavesys)
 
-## 4. Rename the file dwave_sample/config/account.py.default as dwave/sample/config/account.py.Then edit the constant `LEAP_API_TOKEN` like below.
+## 4. Edit account.py and config.py
+
+Rename the file dwave_sample/config/account.py.default as dwave/sample/config/account.py.Then edit the constant `LEAP_API_TOKEN` like below.
 
   ```
   LEAP_API_TOKEN='YOUR_API TOKEN'
   ```
 
-　Additioinally, rename the file dwave_sample/config/config.py.default to dwave_sample/config/config.py.<br>
-　Then edit the constant `API_ENDPOINT` and `SOLVER_NAME` like below.
+Additioinally, rename the file dwave_sample/config/config.py.default to dwave_sample/config/config.py.<br>
+Then edit the constant `API_ENDPOINT` and `SOLVER_NAME` like below.
 
-  SOLVER_NAME is the name you put when asked `Solver(can be left blank)` on `dwave config create`
+SOLVER_NAME is the name you put when asked `Solver(can be left blank)` on `dwave config create`
 
   ```
   API_ENDPOINT='YOUR_API_ENDPOINT'
@@ -108,14 +113,14 @@ Write how to excecute them below.
 
 ## 5. Excecute sample code
 
-　Just execute sample python code like below.
+Just execute sample python code like below.
 
-  ```
-  $ python dwave_sample/sample/019vetex_cover/021wheel_graph_dwave.py
-  ```
+```
+$ python dwave_sample/sample/019vetex_cover/021wheel_graph_dwave.py
+```
 
-  In the sample directory, the name of direcoties and python files consist of 3 digits number and name of directory or file. The 3 digit number represents the referenced page of [D-Wave Ocean Software Documentaion](https://docs.ocean.dwavesys.com/en/latest/index.html)
+In the sample directory, the name of direcoties and python files consist of 3 digits number and name of directory or file. The 3 digit number represents the referenced page of [D-Wave Ocean Software Documentaion](https://docs.ocean.dwavesys.com/en/latest/index.html)
 
-  So, please check the 3 digit number of the name and read the correspondent page of documentaion if you know about the codes.
+So, please check the 3 digit number of the name and read the correspondent page of documentaion if you know about the codes.
 
-  For the detail, please read [dwave_leap_programming_test](https://github.com/gano2018/dwave_leap_programming_test)
+For the detail, please read [dwave_leap_programming_test](https://github.com/gano2018/dwave_leap_programming_test)
